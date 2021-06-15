@@ -2,6 +2,7 @@ import React from 'react';
 import Loader from 'react-loader-spinner';
 import axiosWithAuth from './../utils/axiosWithAuth';
 import Friend from './Friend';
+import AddFriend from './AddFriend';
 
 class FriendsList extends React.Component {
     state = {
@@ -32,6 +33,7 @@ class FriendsList extends React.Component {
                 {this.state.friends.map(friend => {
                    return  <Friend friend={friend}/>
                 })}
+                <AddFriend state={this.state.friends} setState={this.setState} />
             </div>
         )
     }
