@@ -4,7 +4,7 @@ import axiosWithAuth from './../utils/axiosWithAuth';
 
 const initialValues = {
     name: "",
-    age: 0,
+    age: null,
     email: ""
 }
 
@@ -35,31 +35,37 @@ const AddFriend = (props) => {
     }
 
     return (
-        <div>
-            <form onSubmit={submit}>
-                <label>Name:</label>
-                <input 
-                    type="text"
-                    name="name"
-                    value={friend.name}
-                    onChange={handleChange}
+        <div className="add-friend-container">
+            <form onSubmit={submit} className="add-friend-form">
+                <div className="add-friend-input">
+                    <label>Name:</label>
+                    <input 
+                        type="text"
+                        name="name"
+                        value={friend.name}
+                        onChange={handleChange}
 
-                />
-                <label>Email:</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={friend.email}
-                    onChange={handleChange}
                     />
-                <label>Age:</label>
-                <input 
-                    type="number"
-                    name="age"
-                    value={friend.age}
-                    onChange={handleChange}
-                />
-                <button>Add Friend</button>
+                </div>
+                <div className="add-friend-input">
+                    <label>Email:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={friend.email}
+                        onChange={handleChange}
+                        />
+                </div>
+                <div className="add-friend-input">
+                    <label>Age:</label>
+                    <input 
+                        type="number"
+                        name="age"
+                        value={friend.age}
+                        onChange={handleChange}
+                    />
+                </div>
+                <button className="add-friend-button">Add Friend</button>
             </form>
         </div>
     )

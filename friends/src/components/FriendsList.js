@@ -33,11 +33,11 @@ class FriendsList extends React.Component {
 
     render() {
         return(
-            <div>
-                {this.state.friends.map(friend => {
-                   return  <Friend friend={friend}/>
-                })}
-                <AddFriend state={this.state.friends} setState={this.setState} />
+            <div className="friends-list">
+                    {this.state.friends.map(friend => {
+                    return  <Friend friend={friend}/>
+                    })}
+                    <AddFriend state={this.state.friends} setState={this.setState} />
             </div>
         )
     }
